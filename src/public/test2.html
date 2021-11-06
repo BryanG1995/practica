@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    
+    </head>
+    <body>
+        
+            <div id="nav-placeholder">
+            </div>
+            <script>
+                $.get("navbar.html", function(data){
+                    $("#nav-placeholder").replaceWith(data);
+                });
+            </script> 
+        <h1>Hola mundo 2</h1>
+        <p>Paserno pto x2</p>
+    
+        <img src="chems.gif" width="300" height="300" border="0">
+    </body>
+
+</html>
+  
