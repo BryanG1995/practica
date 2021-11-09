@@ -2,9 +2,10 @@
 
 [Git Bryan](https://github.com/BryanG1995)
 
-`Hola Mundo`
+`Hola Mundo`<br/>
 
-📂 Layout <br/>
-  &nbsp;&nbsp; ╘ .gitkeep
+📂 SCR <br/>&nbsp;&nbsp;
+╘ 📂 Layout <br/>&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp; ╘  .gitkeep
 
 > ⬆️ Agrega las carpetas vacias al repositorio (dandole seguimiento)
