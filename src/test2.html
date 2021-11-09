@@ -9,15 +9,20 @@
         
             <div id="nav-placeholder">
             </div>
-            <script>
-                $.get("./Navbar_footer/navbar.html", function(data){
-                    $("#nav-placeholder").replaceWith(data);
-                });
-            </script> 
+            
         <h1>Hola mundo 2</h1>
         <p>Paserno pto x2</p>
     
         <img src="../public/img/chems.gif" width="300" height="300" border="0">
+        <script>
+            $.get("./navbar_footer/navbar.html", function (cos) {
+               $("#nav-placeholder").replaceWith(cos);
+           });
+   
+           $.get("./navbar_footer/footer.html", function (data) {
+               $("#footer-placeholder").replaceWith(data);
+           });
+       </script>
     </body>
 
 </html>
