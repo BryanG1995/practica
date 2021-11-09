@@ -1,6 +1,13 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 .topnav {
     background-color: #333;
     overflow: hidden;
+    padding-left: 5em;
   }
   
   /* Style the links inside the navigation bar */
@@ -23,4 +30,57 @@
   .topnav a.active {
     background-color: #04AA6D;
     color: white;
+    
+  }
+  .topnav a.active:hover {
+    background-color: #3a2fda;
+    color: white;
+    position: relative;
+    /* transform: translate(-50%,-50%) rotate( -45deg); */
+    transition: all 1s ease;
+    
+   
+  }
+
+  footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+    bottom: 0;
+    position: absolute;
+  }
+  .container-footer{
+   display: flex;
+   margin: auto;
+   
+  }
+  .colum1{
+    max-width: 33% ;
+    padding-left: 2em;
+  }
+  .colum1 p{
+    color: #c7c7c7;
+  }
+  .colum2{
+    max-width: 33% ;
+    padding-left: 2em;
+  }
+  .colum2 p{
+    color: #c7c7c7;
+  }
+  .colum3{
+    max-width: 33% ;
+    padding-left: 2em;
+  }
+  .colum3 p{
+    color: #c7c7c7;
+  }
+
+
+  @media screen and (max-width: 800px){
+
+    .container-footer{
+      display: block; 
+      
+    }
   }

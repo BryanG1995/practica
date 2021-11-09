@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    
-    </head>
-    <body>
-        
-            <div id="nav-placeholder">
-            </div>
-            <script>
-                $.get("./navbar_footer/navbar.html", function(data){
-                    $("#nav-placeholder").replaceWith(data);
-                });
-            </script> 
-        <h1>Hola mundo</h1>
-        <p>Paserno pto</p>
-    
-        <a href="test2.html">ir a test 2</a>
 
-        <img src="../public/img/chems.gif" width="300" height="300" border="0">
-    </body>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+</head>
+
+<body>
+
+
+    <div id="nav-placeholder"></div>
+
+    <script>
+        $.get("./navbar_footer/navbar.html", function (cos) {
+            $("#nav-placeholder").replaceWith(cos);
+        });
+        
+    </script>
+    <h1>Hola mundo</h1>
+    <p>Paserno pto</p>
+
+    <a href="test2.html">ir a test 2</a>
+
+    <img src="../public/img/chems.gif" width="300" height="300" border="0">
+    <div id="footer-placeholder"></div>
+    <script>
+        $.get("./navbar_footer/footer.html", function (data) {
+            $("#footer-placeholder").replaceWith(data);
+        });
+    </script>
+</body>
 
 </html>
-  
