@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <link rel="stylesheet" href="../src/css/style.css">
+    </head>
+    <body>
+        
+            <div id="nav-placeholder">
+            </div>
+            
+        <h1>Hola mundo 2</h1>
+        <p>Paserno pto x2</p>
+    
+        <img src="../public/img/chems.gif" width="300" height="300" border="0">
+        <script>
+            $.get("./navbar_footer/navbar.html", function (cos) {
+               $("#nav-placeholder").replaceWith(cos);
+           });
+   
+           $.get("./navbar_footer/footer.html", function (data) {
+               $("#footer-placeholder").replaceWith(data);
+           });
+       </script>
+    </body>
+
+</html>
+  
