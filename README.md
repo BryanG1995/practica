@@ -5,6 +5,6 @@
 `Hola Mundo`
 
 📂 Layout <br/>
-   ╘ .gitkeep
+  &nbsp;&nbsp; ╘ .gitkeep
 
 > ⬆️ Agrega las carpetas vacias al repositorio (dandole seguimiento)
