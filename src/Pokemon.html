@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Page</title>
+
+    
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+
+
+    <label for="name">Coloque un numero de un Pokemon :</label>
+
+
+    <input type="text" id="textBoxPoke" name="name" required
+       minlength="4" maxlength="8" size="10">
+      
+    <button id="submit">Submit</button>
+    <div class="textAlignCenter">
+        
+    
+    </div>
+    <div id="message"></div>
+
+
+
+
+
+
+    <div id="footer-placeholder"></div>
+
+    
+</body>
+
+
+<footer> 
+    
+    <script>
+        $.get("./navbar_footer/navbar.html", function (cos) {
+            $("#nav-placeholder").replaceWith(cos);
+        });
+        $.get("test.html", function (cont) {
+            $("#contenido").replaceWith(cont);
+        });
+        $.get("./navbar_footer/footer.html", function (data) {
+            $("#footer-placeholder").replaceWith(data);
+        });
+
+
+
+
+        $(document).ready(function () {
+    $("#submit").click(function (e) {
+        var validate = Validate();
+        $("#message").html(validate);
+        if (validate.length == 0) {
+            $.ajax({
+                type: "GET",
+                url: "https://pokeapi.co/api/v2/pokemon/" + $("#textBoxPoke").val() ,
+                dataType: "json",
+                success: function (result, status, xhr) {
+                    var table = $("<table><tr><th>Datos de tu Pokemon elegido</th></tr>");
+  
+                    table.append("<tr><td>Nombre:</td><td>" + result["name"] + "</td></tr>");
+                    table.append("<tr><td>Elemento 1:</td><td>" + result["types"]["0"]["type"]["name"] + "</td></tr>");
+                    table.append("<tr><td>Elemento 2:</td><td>" + result["types"]["1"]["type"]["name"] + "</td></tr>");
+                    
+  
+                    $("#message").html(table);
+                },
+                error: function (xhr, status, error) {
+                    alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                }
+            });
+        }
+    });
+  
+    $(document).ajaxStart(function () {
+        $("img").show();
+    });
+  
+    $(document).ajaxStop(function () {
+        $("img").hide();
+    });
+  
+    function Validate() {
+        var errorMessage = "";
+        if ($("#citySelect").val() == "Select") {
+            errorMessage += "► Select City";
+        }
+        return errorMessage;
+    }
+});
+
+
+    </script>
+</footer>
+
+
+
+
+
+
+</html>
