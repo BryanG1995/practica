@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 body{
-  /*background: linear-gradient(#39bdc8,#59d4e8,#caa5f1,#fac0e1);*/
+  background: linear-gradient(#39bdc8,#59d4e8,#caa5f1,#fac0e1);
   /* Tipo de Letra */
   font-family: 'Patua One', cursive;
 }
@@ -82,13 +82,13 @@ body{
   }
 
 
-  @media screen and (max-width: 800px){
+  /* @media screen and (max-width: 800px){
 
     .container-footer{
       display: block; 
       
     }
-  }
+  } */
 
   .test{
     margin: 3%;
@@ -96,3 +96,38 @@ body{
     height: 70vh;
     
   }
+  div.hehe{
+    height: 90vh;
+    
+  }
+  .c-hehe{
+    margin-top: 10ex;
+    text-align: center;
+  }
+
+@keyframes button{
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+
+  .button_hehe{
+    width: 100px;
+    height: 50px;
+    border-radius: 15%;
+    background-color: #fabfb7;
+    color: black;
+    font-size: 100%;
+    font-weight: 750;
+    border-color: rgb(241, 167, 140);
+  }
+  .button_hehe:hover{
+    background-color: #fdf9c4;
+    font-size: 100%;
+    font-weight: 750;
+    animation-name: button;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    border-color: rgb(255, 229, 80);
+  }
+  

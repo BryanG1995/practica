@@ -5,21 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" > </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
     <script type="text/javascript" src="../src/js/app.js"> </script>
-    
+
     <link rel="stylesheet" href="../src/css/style.css">
     <title>Page</title>
 </head>
 
 <body>
     <div id="nav-placeholder"></div>
-    
-    <div class="hehe">
-        <img id="changeHehe" src="../public/img/hehe.png" width="300" height="300" border="0">
-        
-        <input type="button" class="button_hehe" value="NotHehe" onclick="imageReplace()">
 
+    <div class="hehe">
+        <div class="c-hehe">
+            <img id="changeHehe" src="../public/img/hehe.png" width="300" height="300" border="0">
+            <div class="btn-hehe">
+                <input type="button" class="button_hehe" id="btn_he" value="NotHehe" onclick="imageReplace()">
+            </div>
+        </div>
     </div>
 
 
@@ -36,7 +38,7 @@
         });
 
 
-        
+
 
 
     </script>
