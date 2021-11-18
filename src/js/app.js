@@ -18,6 +18,7 @@ if (i===0) {
 }else{
   srcImg;
   hola.value= 'NotHehe';
+  console.log(i);
   i=i - 1;
 }
 }
