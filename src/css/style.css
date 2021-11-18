@@ -108,6 +108,11 @@ body{
   div.divPoke{
     height: 90vh;
   }
+
+  .videodiv
+  {
+    height: 90vh;
+  }
 @keyframes button{
   0% {transform: scale(1);}
   50% {transform: scale(1.2);}
