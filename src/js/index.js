@@ -4,29 +4,13 @@ const body = document.body;
 //const tabBody;
 
 
-const urlPoke = 'https://pokeapi.co/api/v2/pokemon/50';
+const urlPoke = 'https://pokeapi.co/api/v2/pokemon';
 
-
-
-const obtenerPoke = async () => {
-
-    try {
-        
-    const res = await fetch(urlPoke);
-    if(!res.ok) throw'No Hay Respuesta';
-
-    const {name, id} = await res.json();
-
-    return {name, id};
-} catch (err) {
-        throw err;
-}
-}
 
 
 const crearHtml = () => {
 
-    const html= `
+    const html = `
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Pokemon</h1>
@@ -61,27 +45,60 @@ const crearHtml = () => {
     // console.log(body);
     body.append(divC);
 }
+const obtenerPoke = async (ids) => {
 
-const insertarPokemon = (dato) =>{
-    tabBody      = document.querySelector('tbody');
+    // try {
+    // ids = 90;
+    console.log(ids, 'de la funcion obtener');
+
+    const res = await fetch(`${urlPoke}/${ids}`);
+    console.log(res);
+    if (!res.ok) throw 'No Hay Respuesta xd';
+
+    const { name, id } = await res.json();
+
+    return { name, id };
+    // } catch (err) {
+    // throw err;
+    // }
+}
+
+const insertarPokemon = async (dato) => {
+    tabBody = document.querySelector('tbody');
     const trItem = document.createElement('tr');
 
-    trItem.innerHTML =`
+    trItem.innerHTML = `
                     <td> ${dato.id}</td>
                     <td> ${dato.name}</td>
     `
     tabBody.append(trItem);
 
+
 }
 
 
 
 
+crearHtml();
+
+const txtInput = document.querySelector('.form-control');
+
+txtInput.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13 && txtInput.value.length > 0) {
+        console.log(txtInput.value, 'del evento');
+        setTimeout(() => {
+            // obtenerPoke(txtInput.value);
+            init();
+        }, 1000);
 
 
+    }
+});
 
-const init = async() => {
-    crearHtml();
-     insertarPokemon(await obtenerPoke());
+const init = async () => {
+    console.log(' del init');
+    insertarPokemon(await obtenerPoke(txtInput.value));
 }
-init();
+
+
+
