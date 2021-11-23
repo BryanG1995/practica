@@ -15,11 +15,13 @@
 <body>
     <div id="nav-placeholder"></div>
 
-    <div> 
-        <img id="fotoPoke" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/898.png" width="300" height="300" border="1">
-    </div>
+    
+    
 
     <div class="divPoke" > 
+
+        
+
     <label for="name">Coloque el numero de un Pokemon :</label>
 
 
@@ -32,17 +34,18 @@
     
     </div>
 
-    
-
 
 
     <div id="message"></div>
 
-   
-
+    <div> 
+        <img id="fotoPoke" src= width="300" height="300" >
+    </div>  
 
     </div>
 
+
+    
 
     <div id="footer-placeholder"></div>
 
@@ -86,14 +89,14 @@
                     let foto = result["sprites"]["front_default"]
 
                     
-                    table.append("<tr><td>   </td><td>" + foto + "</td></tr>");   
+                    table.append("<tr><td>  Link foto </td><td>" + foto + "</td></tr>");   
 
                     //table.append("<tr><td> <img src=" +result["spites"]["front_default"]+ "> </td></dt>");
 
                 
                     //table.append("<tr><td>Elemento 2:</td><td>" + result["types"]["1"]["type"]["name"] + "</td></tr>");
                      
-                    const srcImg= $('#fotoPoke').attr('src',"'"+foto+"'");
+                    const srcImg= $('#fotoPoke').attr('src',foto);  
 
                     
                     
@@ -107,13 +110,7 @@
         }
     });
   
-    $(document).ajaxStart(function () {
-        $("img").show();
-    });
-  
-    $(document).ajaxStop(function () {
-        $("img").hide();
-    });
+   
   
     function Validate() {
         var errorMessage = "";
