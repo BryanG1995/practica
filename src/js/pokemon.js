@@ -1,4 +1,4 @@
-import { obtenerPoke } from "./obtener-poke";
+import { obtenerPoke } from './obtener-poke';
 
 
 
@@ -7,10 +7,24 @@ const body = document.body;
 const tabBody;
 
 
-const crearHtml = () => {
+export const crearHtml = () => {
 
     const html= `
-    <h1 class=""> Pokemon </h1>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Pokemon</h1>
+            <p class="lead">Aqui Mostraremos algunos pokemones, ahi veremos uwu</p>
+        </div>
+    </div>
+    <div class="divPoke container">
+        <p> <b>Coloque el numero de un Pokemon :</b></p>
+
+        <input class="form-control" type="text" placeholder="Ingresar Id Pokemon">
+        <br>
+        <button class="btn btn-primary" id="submit">Buscar</button>
+        <div class="textAlignCenter">
+        
+    <h1 class=""> Pokemon 1</h1>
     <br>
     <table class="table">
         <thead>
@@ -23,10 +37,12 @@ const crearHtml = () => {
 
         </tbody>
     </table>
+    </div>
     `;
     const divC = document.createElement('div');
     divC.innerHTML = html;
-    body.append(divC);
+    console.log(body);
+    return body.append(divC);
 }
 const insertarPokemon = (name) =>{
     tabBody      = document.querySelector('tbody');
@@ -41,12 +57,15 @@ const insertarPokemon = (name) =>{
 }
 
 
+//todo: clase de input: form-control
 
 
 
 
-export const iniciar = async() => {
+
+
+
+export const init = async() => {
     crearHtml();
-    insertarPokemon(await obtenerPoke());
-
+    // insertarPokemon(await obtenerPoke());
 }
