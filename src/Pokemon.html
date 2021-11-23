@@ -7,47 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../src/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Page</title>
 
- 
+    
 </head>
 
 <body>
     <div id="nav-placeholder"></div>
 
-    <div> 
-        <img id="fotoPoke" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/898.png" width="300" height="300" border="1">
-    </div>
+    
+    
 
-    <div class="divPoke container" > 
+    <div class="divPoke" > 
+
+        
+
     <label for="name">Coloque el numero de un Pokemon :</label>
 
 
-    <input class="form-control" type="text" id="textBoxPoke" name="name" required
+    <input type="text" id="textBoxPoke" name="name" required
        minlength="4" maxlength="25" size="10">
-      <br>
-    <button class="btn btn-primary" id="submit">Buscar</button>
+      
+    <button id="submit">Submit</button>
     <div class="textAlignCenter">
         
     
     </div>
 
-    
-
 
 
     <div id="message"></div>
 
-   
-
+    <div> 
+        <img id="fotoPoke" src= width="300" height="300" >
+    </div>  
 
     </div>
 
 
+    
+
     <div id="footer-placeholder"></div>
 
-    <script type="module" defer src="./js/index.js"></script>
     
 </body>
 
@@ -66,8 +67,8 @@
         });
 
 
-        
-/*
+
+
         $(document).ready(function () {
     $("#submit").click(function (e) {
         var validate = Validate();
@@ -88,14 +89,14 @@
                     let foto = result["sprites"]["front_default"]
 
                     
-                    table.append("<tr><td>   </td><td>" + foto + "</td></tr>");   
+                    table.append("<tr><td>  Link foto </td><td>" + foto + "</td></tr>");   
 
                     //table.append("<tr><td> <img src=" +result["spites"]["front_default"]+ "> </td></dt>");
 
                 
                     //table.append("<tr><td>Elemento 2:</td><td>" + result["types"]["1"]["type"]["name"] + "</td></tr>");
                      
-                    const srcImg= $('#fotoPoke').attr('src',"'"+foto+"'");
+                    const srcImg= $('#fotoPoke').attr('src',foto);  
 
                     
                     
@@ -109,13 +110,7 @@
         }
     });
   
-    $(document).ajaxStart(function () {
-        $("img").show();
-    });
-  
-    $(document).ajaxStop(function () {
-        $("img").hide();
-    });
+   
   
     function Validate() {
         var errorMessage = "";
@@ -125,7 +120,7 @@
         return errorMessage;
     }
 });
-*/
+
 
     </script>
 </footer>
