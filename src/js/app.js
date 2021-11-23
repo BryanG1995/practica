@@ -1,3 +1,5 @@
+
+
 $("button").on("click",function(){
     $(this).prev().slideToggle(300);
   });
@@ -22,5 +24,4 @@ if (i===0) {
   i=i - 1;
 }
 }
-
 
