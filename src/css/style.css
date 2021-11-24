@@ -7,7 +7,9 @@
 body{
   background: linear-gradient(#39bdc8,#59d4e8,#caa5f1,#fac0e1);
   /* Tipo de Letra */
+  height: 100%;
   font-family: 'Patua One', cursive;
+  
 }
 .topnav {
     background-color: #333;
@@ -111,12 +113,12 @@ body{
     margin-left: 30px;
   }
   div.xd{
-    height:90%;
+    height:100fr;
     margin-top: 20px;
     margin-left: 30px;
   }
   div.alldiv{
-    height: 100vh;
+    min-height: 100vh;
   }
   
 

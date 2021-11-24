@@ -13,35 +13,35 @@ const crearHtml = () => {
 //? <p> <b>Coloque el numero de un Pokemon :</b></p>
     const html = `
     <div class="alldiv">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-            <h1 class="display-4">Pokemon</h1>
-            <p class="lead">Aqui Mostraremos algunos pokemones, ahi veremos uwu</p>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Pokemon</h1>
+                <p class="lead">Aqui Mostraremos algunos pokemones, ahi veremos uwu</p>
+            </div>
         </div>
-    </div>
-    <div class="container xd">
-        
+        <div class="container xd">
 
-        
-        <div class="textAlignCenter">
-        
-    <h1 class=""> Boton de Pokemon</h1>
-    <button class="btn btn-primary">CARGAR</button>
-    <br>
-    <table class="table table-striped table-dark ">
-        <thead class="thead-dark">
-            <tr>
-                <th class"wi"> Id </th>
-                <th> Nombre </th>
-                <th> Pokemon </th>
-            </tr>
-        </thead>
-        <tbody>
 
-        </tbody>
-    </table>
-    </div>
-    </div>
+
+            <div class="textAlignCenter">
+
+                <h1 class=""> Boton de Pokemon</h1>
+                <button class="btn btn-primary">CARGAR</button>
+                <br>
+                <table class="table table-striped table-dark ">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class"wi"> Id </th>
+                            <th> Nombre </th>
+                            <th> Pokemon </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
     `;
     const divC = document.createElement('div');
     divC.innerHTML = html;
