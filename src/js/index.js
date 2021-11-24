@@ -13,10 +13,19 @@ const crearHtml = () => {
 //? <p> <b>Coloque el numero de un Pokemon :</b></p>
     const html = `
     <div class="alldiv">
+    
+
+    
+
+
+    
+
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Pokemon</h1>
-                
+                <ul class="nav justify-content-end">
+                <a href="./Pokemon.html" class="btn btn-primary ">Volver</a>
+                </ul>
             </div>
         </div>
         <div class="container xd">
@@ -30,7 +39,7 @@ const crearHtml = () => {
                 <p for="inputAddress2"><b>Cargar Un Pokemon Random</p>
 
 
-                <button class="btn btn-primary">RANDOM</button>
+                <button class="btn btns btn-primary">RANDOM</button>
                 <br>
                 <table class="table table-striped table-dark ">
                     <thead class="thead-dark">
@@ -108,7 +117,7 @@ txtInput.addEventListener('keyup', (event) => {
     }
 });
 
-const btnCargar = document.querySelector('.btn');
+const btnCargar = document.querySelector('.btns');
 
 btnCargar.addEventListener('click', (event)=>{
     init()
