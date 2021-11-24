@@ -16,7 +16,7 @@ const crearHtml = () => {
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Pokemon</h1>
-                <p class="lead">Aqui Mostraremos algunos pokemones, ahi veremos uwu</p>
+                
             </div>
         </div>
         <div class="container xd">
@@ -24,9 +24,13 @@ const crearHtml = () => {
 
 
             <div class="textAlignCenter">
+                <p ><b>Elegir ID de Pokemon</b></p>
+                <input class="form-control" type="number" placeholder="ID Pokemon: Presionar Enter">
+                <hr>
+                <p for="inputAddress2"><b>Cargar Un Pokemon Random</p>
 
-                <h1 class=""> Boton de Pokemon</h1>
-                <button class="btn btn-primary">CARGAR</button>
+
+                <button class="btn btn-primary">RANDOM</button>
                 <br>
                 <table class="table table-striped table-dark ">
                     <thead class="thead-dark">
@@ -90,18 +94,19 @@ function getRandomInt() {
 
 crearHtml();
 
-// const txtInput = document.querySelector('.form-control');
+const txtInput = document.querySelector('.form-control');
 //! con textbox
-// txtInput.addEventListener('keyup', (event) => {
-//     if (event.keyCode === 13 && txtInput.value.length > 0) {
-//         console.log(txtInput.value, 'del evento');
-//         setTimeout(() => {
-//             // obtenerPoke(txtInput.value);
-//             init();
-//         }, 1000);
+txtInput.addEventListener('keyup', (event) => {
+    if (event.keyCode === 13 && txtInput.value.length > 0) {
+        
+        setTimeout(() => {
+            // obtenerPoke(txtInput.value);
+            init2();
+            txtInput.value = ''; // Limpiar input
+        }, 30);
 
-//     }
-// });
+    }
+});
 
 const btnCargar = document.querySelector('.btn');
 
@@ -114,6 +119,9 @@ btnCargar.addEventListener('click', (event)=>{
 
 const init = async () => {
     insertarPokemon(await obtenerPoke(getRandomInt()));
+}
+const init2 = async () => {
+    insertarPokemon(await obtenerPoke(txtInput.value));
 }
 
 
