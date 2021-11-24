@@ -1,4 +1,4 @@
-//  import { obtenerPoke } from '../o';
+
 
 const body = document.body;
 //const tabBody;
@@ -7,9 +7,10 @@ const body = document.body;
 const urlPoke = 'https://pokeapi.co/api/v2/pokemon';
 
 
-
+//! Crea la estructura de html inicial
 const crearHtml = () => {
-
+//? <input class="form-control" type="text" placeholder="Ingresar Id Pokemon">
+//? <p> <b>Coloque el numero de un Pokemon :</b></p>
     const html = `
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -18,20 +19,20 @@ const crearHtml = () => {
         </div>
     </div>
     <div class="divPoke container">
-        <p> <b>Coloque el numero de un Pokemon :</b></p>
+        
 
-        <input class="form-control" type="text" placeholder="Ingresar Id Pokemon">
-        <br>
         
         <div class="textAlignCenter">
         
-    <h1 class=""> Pokemon 1</h1>
+    <h1 class=""> Boton de Pokemon</h1>
+    <button class="btn btn-primary">CARGAR</button>
     <br>
     <table class="table">
         <thead>
             <tr>
                 <th> Id </th>
                 <th> Nombre </th>
+                <th> Pokemon </th>
             </tr>
         </thead>
         <tbody>
@@ -42,62 +43,75 @@ const crearHtml = () => {
     `;
     const divC = document.createElement('div');
     divC.innerHTML = html;
-    // console.log(body);
+    
     body.append(divC);
 }
+//! Aqui se le entrega la id de la pagina de la api, para mandar el pokemon
 const obtenerPoke = async (ids) => {
 
-    // try {
-    // ids = 90;
-    console.log(ids, 'de la funcion obtener');
-
+    console.log(ids);
     const res = await fetch(`${urlPoke}/${ids}`);
-    console.log(res);
-    if (!res.ok) throw 'No Hay Respuesta xd';
+    if (!res.ok) throw 'No Hay Respuesta de la Api';
 
-    const { name, id } = await res.json();
+    const { name, id, sprites } = await res.json();
+    
+    
 
-    return { name, id };
+    return { name, id, sprites } ;
     // } catch (err) {
     // throw err;
     // }
 }
-
+//! Insertar elementos html con la id y nombre del pokemon
 const insertarPokemon = async (dato) => {
+//todo <img src="..." class="rounded float-right" alt="...">
+
     tabBody = document.querySelector('tbody');
     const trItem = document.createElement('tr');
 
     trItem.innerHTML = `
-                    <td> ${dato.id}</td>
-                    <td> ${dato.name}</td>
+                    <td> <b>${dato.id}</b></td>
+                    <td> <b>${dato.name.toUpperCase()}</b></td>
+                    <td><img src="${dato.sprites['front_default']}" class="rounded float-left" ></td>
     `
-    tabBody.append(trItem);
+    tabBody.appendChild(trItem);
 
 
 }
-
-
+//! Funcion Random
+function getRandomInt() {
+    return Math.floor(Math.random() * 898);
+  }
+  
+//   console.log(getRandomInt(1000));
 
 
 crearHtml();
 
-const txtInput = document.querySelector('.form-control');
+// const txtInput = document.querySelector('.form-control');
+//! con textbox
+// txtInput.addEventListener('keyup', (event) => {
+//     if (event.keyCode === 13 && txtInput.value.length > 0) {
+//         console.log(txtInput.value, 'del evento');
+//         setTimeout(() => {
+//             // obtenerPoke(txtInput.value);
+//             init();
+//         }, 1000);
 
-txtInput.addEventListener('keyup', (event) => {
-    if (event.keyCode === 13 && txtInput.value.length > 0) {
-        console.log(txtInput.value, 'del evento');
-        setTimeout(() => {
-            // obtenerPoke(txtInput.value);
-            init();
-        }, 1000);
+//     }
+// });
 
+const btnCargar = document.querySelector('.btn');
 
-    }
+btnCargar.addEventListener('click', (event)=>{
+    init()
+    
 });
 
+
+
 const init = async () => {
-    console.log(' del init');
-    insertarPokemon(await obtenerPoke(txtInput.value));
+    insertarPokemon(await obtenerPoke(getRandomInt()));
 }
 
 
