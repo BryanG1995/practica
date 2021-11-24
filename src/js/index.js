@@ -12,13 +12,14 @@ const crearHtml = () => {
 //? <input class="form-control" type="text" placeholder="Ingresar Id Pokemon">
 //? <p> <b>Coloque el numero de un Pokemon :</b></p>
     const html = `
+    <div class="alldiv">
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Pokemon</h1>
             <p class="lead">Aqui Mostraremos algunos pokemones, ahi veremos uwu</p>
         </div>
     </div>
-    <div class="divPoke container">
+    <div class="container xd">
         
 
         
@@ -27,10 +28,10 @@ const crearHtml = () => {
     <h1 class=""> Boton de Pokemon</h1>
     <button class="btn btn-primary">CARGAR</button>
     <br>
-    <table class="table">
-        <thead>
+    <table class="table table-striped table-dark ">
+        <thead class="thead-dark">
             <tr>
-                <th> Id </th>
+                <th class"wi"> Id </th>
                 <th> Nombre </th>
                 <th> Pokemon </th>
             </tr>
@@ -39,6 +40,7 @@ const crearHtml = () => {
 
         </tbody>
     </table>
+    </div>
     </div>
     `;
     const divC = document.createElement('div');
