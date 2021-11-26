@@ -71,27 +71,15 @@ const navbarHtml = () => {
     <div class="topnav">
       
       <a id="home" class="active" href="#home">Home</a>
-        <a id="news" href="#news">News</a>
-        <div class="dropdown">
-          <button class="dropbtn">Pokemon
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="./Pokemon.html">PokeApi jquery</a>
-            <a href="./poke2.html">PokeApi Javascript</a>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Memes
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="./hehe.html">Gato Hehe</a>
-            <a href="./sorpresa.html">Sorpresa</a>
-            <a href="./videotest.html">Prueba Video</a>
-          </div>
-        </div>
+        <a id="news" href="#news">News</a>         
+          <a class="dropbtn"href="./Pokemon.html">Pokemon</a>
+
+        
+          
+          <a class="dropbtn" href="./hehe.html">Memes</a>
+          
+          
+        
       </div>`
     const divC1 = document.createElement('div');
     divC1.innerHTML = html;
