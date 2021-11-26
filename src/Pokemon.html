@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../src/js/app.js"></script>
     <link rel="stylesheet" href="../src/css/style.css">
     <title>Page</title>
 
@@ -53,133 +54,15 @@
 <footer> 
     
     <script>
-        $.get("./navbar_footer/navbar.html", function (cos) {
-            $("#nav-placeholder").replaceWith(cos);
-        });
-        $.get("test.html", function (cont) {
-            $("#contenido").replaceWith(cont);
-        });
-        $.get("./navbar_footer/footer.html", function (data) {
-            $("#footer-placeholder").replaceWith(data);
-        });
-
-
-
-
-        $(document).ready(function () {
-    $("#submit").click(function (e) {
-
-        
-
-        var validate = Validate();
-        $("#message").html(validate);
-        if (validate.length == 0) {
-            let randomNumber = Math.floor((Math.random() * 898) + 1);
-           
-            $.ajax({
-                type: "GET",
-                url: "https://pokeapi.co/api/v2/pokemon/" +  randomNumber,// $("#textBoxPoke").val() ,
-                dataType: "json",
-                success: function (result, status, xhr) {
-                    var table = $("<table><tr><th>Datos de tu Pokemon elegido</th></tr>");
-  
-                    table.append("<tr><th>Nombre:</th><td>" + result["name"] + "</td></tr>");
-                    table.append("<tr><th>Elemento 1:</th><td>" + result["types"]["0"]["type"]["name"] + "</td></tr>");
-                    table.append("<tr><th>Id:</th><td>" + result["id"] + "</td></tr>");
-                    let foto = result["sprites"]["front_default"]
-
-                    
-                    table.append("<tr><th>  Link foto </th><td>" + foto + "</td></tr>");   
-
-                    //table.append("<tr><td> <img src=" +result["spites"]["front_default"]+ "> </td></dt>");
-
-                
-                    //table.append("<tr><td>Elemento 2:</td><td>" + result["types"]["1"]["type"]["name"] + "</td></tr>");
-                     
-                    const srcImg= $('#fotoPoke').attr('src',foto);  
-
-                
-                    
-  
-                    $("#message").html(table);
-                    let colorTipo = result["types"]["0"]["type"]["name"];  
-                    console.log(colorTipo);
-                    switch(colorTipo)    {
-                        case "normal" : $("th").css("background-color", "Lavender");
-                        break;
-                        case "fighting" :$("th").css("background-color", "Firebrick");
-                        break;
-                        case "flying":$("th").css("background-color", "rgb(116, 111, 161)");
-                        break;
-                        case "poison":$("th").css("background-color", "Mediumpurple");
-                        break;
-                        case "ground":$("th").css("background-color", "BurlyWood");
-                        break;
-                        case "rock":$("th").css("background-color", "Peru");
-                        break;   
-                        case "bug":$("th").css("background-color", "YellowGreen");
-                        break;
-                        case "ghost":$("th").css("background-color", "Purple");
-                        break;
-                        case "steel":$("th").css("background-color", "LightGrey");
-                        break;
-                        case "fire":$("th").css("background-color", "Crimson");
-                        break;
-                        case "water":$("th").css("background-color", "RoyalBlue");
-                        break;
-                        case "grass":$("th").css("background-color", "Lime");
-                        break;
-                        case "electric": $("th").css("background-color", "yellow");
-                        break;
-                        case "psychic":$("th").css("background-color", "Violet");
-                        break;
-                        case "ice":$("th").css("background-color", "AquaMarine");
-                        break;
-                        case "dragon":$("th").css("background-color", "MediumSlateBlue");
-                        break;
-                        case "dark":$("th").css("background-color", "SlateGray");
-                        break;
-                        case "fairy":$("th").css("background-color", "rgb(255, 136, 238)");
-                        break;
-                        case "unknown":$("th").css("background-color", "rgba(37, 35, 35, 0.966)");
-                        break;
-                        case "shadow" :$("th").css("background-color", "rgb(60, 0, 68)");
-                        break;
-                    }
-
-                    //$("th").css("background-color", "yellow");
-                     //alert("Background color = " + $("th").css("background-color"));
- 
-                },
-                error: function (xhr, status, error) {
-                    alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-                }
-            });
-        }
-    });
-  
-   
-  
-    function Validate() {
-        var errorMessage = "";
-        if ($("#citySelect").val() == "Select") {
-            errorMessage += "► Select City";
-        }
-        return errorMessage;
-    }
-
-
-
-   
-
-
-
-
-
-
-
-});
-
+        // $.get("./navbar_footer/navbar.html", function (cos) {
+        //     $("#nav-placeholder").replaceWith(cos);
+        // });
+        // $.get("test.html", function (cont) {
+        //     $("#contenido").replaceWith(cont);
+        // });
+        // $.get("./navbar_footer/footer.html", function (data) {
+        //     $("#footer-placeholder").replaceWith(data);
+        // });
 
     </script>
 </footer>
