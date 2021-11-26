@@ -28,9 +28,11 @@ const crearHtml = () => {
 
 
             <div class="textAlignCenter">
+            
                 <p ><b>Elegir ID de Pokemon</b></p>
                 <input class="form-control" type="number" placeholder="ID Pokemon: Presionar Enter">
                 <hr>
+                
                 <p for="inputAddress2"><b>Cargar Un Pokemon Random</p>
 
 
@@ -61,6 +63,68 @@ const crearHtml = () => {
 
     body.append(divC);
 }
+
+
+const navbarHtml = () => {
+
+    const html = `
+    <div class="topnav">
+      
+      <a id="home" class="active" href="#home">Home</a>
+        <a id="news" href="#news">News</a>
+        <div class="dropdown">
+          <button class="dropbtn">Pokemon
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="./Pokemon.html">PokeApi jquery</a>
+            <a href="./poke2.html">PokeApi Javascript</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Memes
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="./hehe.html">Gato Hehe</a>
+            <a href="./sorpresa.html">Sorpresa</a>
+            <a href="./videotest.html">Prueba Video</a>
+          </div>
+        </div>
+      </div>`
+    const divC1 = document.createElement('div');
+    divC1.innerHTML = html;
+
+    body.append(divC1);
+}
+const footerHtml = () => {
+    const html = `
+    <div class="footer1">
+        <div class="container-footer">
+            <div class="colum1">
+                <h1>Bryan Pto</h1>
+                <p>El bryan es un especimen especial, venido de las catacumbas de algun lugar remoto</p>
+            </div>
+            <div class="colum2">
+                <h1>Red</h1>
+                <p>En cosmología, aún no se conoce ni se sabe si será posible conocer la existencia de vida en otros lugares del Universo distintos de la Tierra</p>
+            </div>
+            <div class="colum3">
+                <h1>Paserno pto</h1>
+                <p>Paserno es un chico muy putito, jugador de fortnite, llora porq no le salen cosas interesantes en su juego muerto llamado GTA V</p>
+            </div>
+        </div>
+    </div >
+    `
+        
+    const divC1 = document.createElement('div');
+divC1.innerHTML = html;
+
+body.append(divC1);
+}
+
+
 //! Aqui se le entrega la id de la pagina de la api, para mandar el pokemon
 const obtenerPoke = async (ids) => {
 
@@ -70,7 +134,7 @@ const obtenerPoke = async (ids) => {
     const { name, id, sprites, types } = await res.json();
 
     return { name, id, sprites, types };
-   
+
 }
 //! Insertar elementos html con la id y nombre del pokemon
 const insertarPokemon = async ({ id, name, types, sprites }) => {
@@ -107,8 +171,9 @@ function getRandomInt() {
     return Math.floor(Math.random() * 898);
 }
 
-
+navbarHtml();
 crearHtml();
+footerHtml();
 
 const txtInput = document.querySelector('.form-control');
 //! con textbox
