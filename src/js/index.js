@@ -44,6 +44,7 @@ const crearHtml = () => {
                         <tr>
                             <th class"wi"> Id </th>
                             <th> Nombre </th>
+                            <th> Elemento </th>
                             <th> Pokemon </th>
                         </tr>
                     </thead>
@@ -66,27 +67,36 @@ const obtenerPoke = async (ids) => {
     const res = await fetch(`${urlPoke}/${ids}`);
     if (!res.ok) throw 'No Hay Respuesta de la Api';
 
-    const { name, id, sprites } = await res.json();
+    const { name, id, sprites, types } = await res.json();
     
-    
+    console.log(types[0].type.name);
 
-    return { name, id, sprites } ;
+
+    return { name, id, sprites, types } ;
     // } catch (err) {
     // throw err;
     // }
 }
 //! Insertar elementos html con la id y nombre del pokemon
-const insertarPokemon = async (dato) => {
+const insertarPokemon = async ({id, name,types, sprites}) => {
 //todo <img src="..." class="rounded float-right" alt="...">
 
     tabBody = document.querySelector('tbody');
     const trItem = document.createElement('tr');
-
+    if(types[1]){
+        trItem.innerHTML = `
+        <td> <b>${id}</b></td>
+        <td> <b>${name.toUpperCase()}</b></td>
+        <td> <b>${types[0].type.name.toUpperCase()} & ${types[1].type.name.toUpperCase()}</b></td>
+        <td><img draggable="false" src="${sprites['front_default']}" class="rounded float-left" ></td>
+`
+    }else{
     trItem.innerHTML = `
-                    <td> <b>${dato.id}</b></td>
-                    <td> <b>${dato.name.toUpperCase()}</b></td>
-                    <td><img draggable="false" src="${dato.sprites['front_default']}" class="rounded float-left" ></td>
-    `
+                    <td> <b>${id}</b></td>
+                    <td> <b>${name.toUpperCase()}</b></td>
+                    <td> <b>${types[0].type.name.toUpperCase()}</b></td>
+                    <td><img draggable="false" src="${sprites['front_default']}" class="rounded float-left" ></td>
+    `}
     tabBody.append(trItem);
 
 
