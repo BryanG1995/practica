@@ -1,0 +1,185 @@
+
+td.normal{
+        background-color :Lavender;
+    }
+td.fighting{
+        background-color: Firebrick;
+    }
+td.flying{
+        background-color: rgb(116, 111, 161);
+    }
+td.poison{
+        background-color: Mediumpurple;
+    }
+td.ground{
+        background-color: BurlyWood;
+    }
+td.rock{
+        background-color: Peru;
+    }
+td.bug{
+        background-color: YellowGreen;
+    }
+td.ghost{
+        background-color: Purple;
+    }
+td.steel{
+        background-color: LightGrey;
+    }
+td.fire{
+        background-color: Crimson;
+    }
+td.water{
+        background-color: RoyalBlue;
+    }
+td.grass{
+        background-color: Lime;
+    }
+td.electric{
+        background-color: yellow;
+    }
+td.psychic{
+        background-color: Violet;
+    }
+td.ice{
+        background-color: AquaMarine;
+    }
+td.dragon{
+        background-color: MediumSlateBlue;
+    }
+td.dark{
+        background-color: SlateGray;
+    }
+td.fairy{
+        background-color: rgb(255, 136, 238);
+    }
+td.unknown{
+        background-color: rgba(37, 35, 35, 0.966);
+    }
+td.shadow{
+        background-color: rgb(60, 0, 68);
+    }
+
+td.normal{
+        background-color :Lavender;
+    }
+td.fighting{
+        background-color: Firebrick;
+    }
+td.flying{
+        background-color: rgb(116, 111, 161);
+    }
+td.poison{
+        background-color: Mediumpurple;
+    }
+td.ground{
+        background-color: BurlyWood;
+    }
+td.rock{
+        background-color: Peru;
+    }
+td.bug{
+        background-color: YellowGreen;
+    }
+td.ghost{
+        background-color: Purple;
+    }
+td.steel{
+        background-color: LightGrey;
+    }
+td.fire{
+        background-color: Crimson;
+    }
+td.water{
+        background-color: RoyalBlue;
+    }
+td.grass{
+        background-color: Lime;
+    }
+td.electric{
+        background-color: yellow;
+    }
+td.psychic{
+        background-color: Violet;
+    }
+td.ice{
+        background-color: AquaMarine;
+    }
+td.dragon{
+        background-color: MediumSlateBlue;
+    }
+td.dark{
+        background-color: SlateGray;
+    }
+td.fairy{
+        background-color: rgb(255, 136, 238);
+    }
+td.unknown{
+        background-color: rgba(37, 35, 35, 0.966);
+    }
+td.shadow{
+        background-color: rgb(60, 0, 68);
+    }
+
+
+/* ------------------------------------------------------------------------------ */
+tr.normal2:hover td{
+    background-color :Lavender;
+}
+tr.fighting2:hover td{
+    background-color: Firebrick;
+}
+tr.flying2:hover td{
+    background-color: rgb(116, 111, 161);
+}
+tr.poison2:hover td{
+    background-color: Mediumpurple;
+}
+tr.ground2:hover td{
+    background-color: BurlyWood;
+}
+tr.rock2:hover td{
+    background-color: Peru;
+}
+tr.bug2:hover td{
+    background-color: YellowGreen;
+}
+tr.ghost2:hover td{
+    background-color: Purple;
+}
+tr.steel2:hover td{
+    background-color: LightGrey;
+}
+tr.fire2:hover td{
+    background-color: Crimson;
+}
+tr.water2:hover td{
+    background-color: RoyalBlue;
+}
+tr.grass2:hover td{
+    background-color: Lime;
+}
+tr.electric2:hover td{
+    background-color: yellow;
+}
+tr.psychic2:hover td{
+    background-color: Violet;
+}
+tr.ice2:hover td{
+    background-color: AquaMarine;
+}
+tr.dragon2:hover td{
+    background-color: MediumSlateBlue;
+}
+tr.dark2:hover td{
+    background-color: SlateGray;
+}
+tr.fairy2:hover td{
+    background-color: rgb(255, 136, 238);
+}
+tr.unknown2:hover td{
+    background-color: rgba(37, 35, 35, 0.966);
+}
+tr.shadow2:hover td{
+    background-color: rgb(60, 0, 68);
+}

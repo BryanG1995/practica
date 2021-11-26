@@ -167,8 +167,9 @@ body{
     
   }
 
-  th {
-    background-color: #04AA6D;
+  th.jq {
+    background-color: #1c1c1c;
+    color: white;
     /* color: rgb(0, 0, 0); */
   }
 
