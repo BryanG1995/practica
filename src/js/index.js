@@ -13,12 +13,6 @@ const crearHtml = () => {
 //? <p> <b>Coloque el numero de un Pokemon :</b></p>
     const html = `
     <div class="alldiv">
-    
-
-    
-
-
-    
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -40,6 +34,10 @@ const crearHtml = () => {
 
 
                 <button class="btn btns btn-primary">RANDOM</button>
+                
+                
+                <button class="btn btnl btn-danger">LIMPIAR</button>
+                
                 <br>
                 <table class="table table-striped table-dark ">
                     <thead class="thead-dark">
@@ -87,9 +85,9 @@ const insertarPokemon = async (dato) => {
     trItem.innerHTML = `
                     <td> <b>${dato.id}</b></td>
                     <td> <b>${dato.name.toUpperCase()}</b></td>
-                    <td><img src="${dato.sprites['front_default']}" class="rounded float-left" ></td>
+                    <td><img draggable="false" src="${dato.sprites['front_default']}" class="rounded float-left" ></td>
     `
-    tabBody.appendChild(trItem);
+    tabBody.append(trItem);
 
 
 }
@@ -122,6 +120,19 @@ const btnCargar = document.querySelector('.btns');
 btnCargar.addEventListener('click', (event)=>{
     init()
     
+});
+
+//! Agregar Boton Limpiar
+const btnLimpiar = document.querySelector('.btnl');
+btnLimpiar.addEventListener('click', (event)=>{
+
+    const tabBody = document.querySelector('tbody');
+    const tablaRow = tabBody.getElementsByTagName('tr');
+    const rowCount = tablaRow.length - 1 ;
+   
+    for(let i = rowCount; i>= 0; i--){
+        tabBody.removeChild(tablaRow[i]);
+    }
 });
 
 
