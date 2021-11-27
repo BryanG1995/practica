@@ -140,9 +140,12 @@ $(document).ready(function () {
 
 
 
- 
+  $("#cambioColor").click(function (e) {
 
+    $("body").css("background", "black");
 
+  });
+  
 
 
 
