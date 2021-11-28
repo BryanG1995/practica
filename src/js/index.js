@@ -125,6 +125,7 @@ const obtenerPoke = async (ids) => {
 
 }
 //! Insertar elementos html con la id y nombre del pokemon
+// TODO:
 const insertarPokemon = async ({ id, name, types, sprites }) => {
     //todo <img src="..." class="rounded float-right" alt="...">
 

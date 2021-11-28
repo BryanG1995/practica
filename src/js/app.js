@@ -51,29 +51,37 @@ $(document).ready(function () {
               url: "https://pokeapi.co/api/v2/pokemon/" +  randomNumber,// $("#textBoxPoke").val() ,
               dataType: "json",
               success: function (result, status, xhr) {
+                  let conteoTipos = Object.keys(result["types"]).length;
                   var table = $("<table><tr><th>Datos de tu Pokemon elegido</th></tr>");
-
+                  let colorTipo = result["types"]["0"]["type"]["name"];  
+                  console.log("Elemento 1 = " + colorTipo);
                   table.append("<tr><th>Nombre:</th><td>" + result["name"] + "</td></tr>");
-                  table.append("<tr><th>Elemento 1:</th><td>" + result["types"]["0"]["type"]["name"] + "</td></tr>");
+                  if(conteoTipos ==2)
+                  {
+                    table.append("<tr><th>Elemento 1:</th><td>" + result["types"]["0"]["type"]["name"] + "</td></tr>");
+                    table.append("<tr><th>Elemento 2:</th><td>" + result["types"]["1"]["type"]["name"] + "</td></tr>");
+                    var nombreColor2 = result["types"]["1"]["type"]["name"];
+                    console.log("Elemento 2 = " + nombreColor2);
+                  }
+                  else
+                  {
+                    table.append("<tr><th>Elemento 1:</th><td>" + result["types"]["0"]["type"]["name"] + "</td></tr>");
+                  }
+
+
                   table.append("<tr><th>Id:</th><td>" + result["id"] + "</td></tr>");
                   let foto = result["sprites"]["front_default"]
-
                   
+
                   table.append("<tr><th>  Link foto </th><td>" + foto + "</td></tr>");   
 
-                  //table.append("<tr><td> <img src=" +result["spites"]["front_default"]+ "> </td></dt>");
-
-              
-                  //table.append("<tr><td>Elemento 2:</td><td>" + result["types"]["1"]["type"]["name"] + "</td></tr>");
-                   
                   const srcImg= $('#fotoPoke').attr('src',foto);  
 
               
                   
 
                   $("#message").html(table);
-                  let colorTipo = result["types"]["0"]["type"]["name"];  
-                  console.log(colorTipo);
+                  
                   switch(colorTipo)    {
                       case "normal" : $("th").css("background-color", "Lavender");
                       break;
@@ -128,7 +136,7 @@ $(document).ready(function () {
       }
   });
 
- 
+  
 
   function Validate() {
       var errorMessage = "";
