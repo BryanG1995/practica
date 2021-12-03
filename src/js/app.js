@@ -156,7 +156,49 @@ $(document).ready(function () {
   
 
 
+  $("#submitGif").click(function (e) {
 
+      
+
+    var validate = Validate();
+    $("#message").html(validate);
+    if (validate.length == 0) {
+        
+       
+        $.ajax({
+            type: "GET",
+            url: "https://api.giphy.com/v1/gifs/search?api_key=ExgRl7Mv3CupmeYU15F2txZMRZHF3wqs&q=" +   $("#textBoxGif").val() + "&limit=25&offset=0&rating=g&lang=es" ,
+            dataType: "json",
+            success: function (result, status, xhr) {
+               
+              let foto = result["data"]["0"]["embed_url"];
+              console.log(result);
+                var table = $("<table><tr><th>Datos de tu Gif elegido</th></tr>");
+                
+                
+                table.append("<tr><th>Tipo :</th><td>" + result["data"]["0"]["type"] + "</td></tr>"); 
+
+                table.append("<tr><th>Nombre Gif :</th><td>" + result["data"]["0"]["title"] + "</td></tr>");
+
+                const srcImg= $('#fotoGif').attr('src',foto );  
+
+            
+                
+
+                $("#message").html(table);
+                
+               
+
+                //$("th").css("background-color", "yellow");
+                 //alert("Background color = " + $("th").css("background-color"));
+
+            },
+            error: function (xhr, status, error) {
+                alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+            }
+        });
+    }
+});
 
 
 });
